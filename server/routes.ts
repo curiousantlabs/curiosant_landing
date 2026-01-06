@@ -14,6 +14,23 @@ export async function registerRoutes(
     try {
       const input = api.contact.create.input.parse(req.body);
       const request = await storage.createContactRequest(input);
+
+      // Send to Webhook
+      try {
+        const webhookUrl = 'http://88.222.214.250:5678/webhook/demoRequest';
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(input),
+        });
+        console.log(`Successfully sent contact request ${request.id} to webhook`);
+      } catch (webhookError) {
+        console.error('Failed to send contact request to webhook:', webhookError);
+        // We don't block the response if the webhook fails, avoiding user-facing error
+      }
+
       res.status(201).json(request);
     } catch (err) {
       if (err instanceof z.ZodError) {

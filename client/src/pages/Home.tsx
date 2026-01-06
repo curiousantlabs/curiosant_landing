@@ -14,7 +14,8 @@ import {
   Menu,
   X,
   Play,
-  Languages
+  Languages,
+  Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ContactModal";
@@ -40,7 +41,7 @@ export default function Home() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-sm font-medium text-muted-foreground hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" className="text-sm font-medium text-muted-foreground hover:text-white transition-colors">How it works</a>
+              <a href="#how-it-works" className="text-sm font-medium text-muted-foreground hover:text-white transition-colors">Capabilities</a>
               <a href="#use-cases" className="text-sm font-medium text-muted-foreground hover:text-white transition-colors">Use Cases</a>
               <a href="#services" className="text-sm font-medium text-muted-foreground hover:text-white transition-colors">Services</a>
               <ContactModal>
@@ -62,7 +63,7 @@ export default function Home() {
           <div className="md:hidden border-b border-white/5 bg-background">
             <div className="px-4 py-4 space-y-4">
               <a href="#features" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-muted-foreground">Features</a>
-              <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-muted-foreground">How it works</a>
+              <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-muted-foreground">Capabilities</a>
               <a href="#use-cases" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-muted-foreground">Use Cases</a>
               <ContactModal>
                 <Button className="w-full">Book Demo</Button>
@@ -116,12 +117,32 @@ export default function Home() {
               {/* Trust Badge */}
               <div className="mt-12 pt-8 border-t border-white/5">
                 <p className="text-sm text-muted-foreground mb-4">Trusted by innovative companies</p>
-                <div className="flex gap-6 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                  {/* Company Logos Placeholder */}
-                  <div className="h-8 w-24 bg-white/20 rounded animate-pulse" />
-                  <div className="h-8 w-24 bg-white/20 rounded animate-pulse delay-75" />
-                  <div className="h-8 w-24 bg-white/20 rounded animate-pulse delay-150" />
-                  <div className="h-8 w-24 bg-white/20 rounded animate-pulse delay-200" />
+                {/* Company Logos */}
+                <div className="flex items-center justify-between w-full grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500 gap-8 sm:gap-12">
+                  {/* Logo 1: Acme */}
+                  <svg className="h-8 w-auto" viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,25 L20,5 L30,25 M5,25 H35" stroke="currentColor" strokeWidth="3" fill="none" />
+                    <text x="40" y="22" fontFamily="sans-serif" fontSize="18" fontWeight="bold">ACME</text>
+                  </svg>
+
+                  {/* Logo 2: Quantum */}
+                  <svg className="h-8 w-auto" viewBox="0 0 140 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+                    <circle cx="15" cy="15" r="4" fill="currentColor" />
+                    <text x="35" y="22" fontFamily="sans-serif" fontSize="18" fontWeight="bold">QUANTUM</text>
+                  </svg>
+
+                  {/* Logo 3: Echo */}
+                  <svg className="h-8 w-auto" viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5,15 Q15,5 25,15 T45,15" stroke="currentColor" strokeWidth="3" fill="none" />
+                    <text x="50" y="22" fontFamily="sans-serif" fontSize="18" fontWeight="bold">ECHO</text>
+                  </svg>
+
+                  {/* Logo 4: Nebula */}
+                  <svg className="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15,15 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0" stroke="currentColor" strokeWidth="2" strokeDasharray="4 2" fill="none" />
+                    <text x="35" y="22" fontFamily="sans-serif" fontSize="18" fontWeight="bold">NEBULA</text>
+                  </svg>
                 </div>
               </div>
             </motion.div>
@@ -146,7 +167,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-              Platform Capabilities
+              Platform Features
             </h2>
             <p className="text-lg text-muted-foreground">
               Everything you need to build and deploy enterprise-grade voice AI.
@@ -197,77 +218,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Autonomous & Collaborative Agents */}
       <section id="how-it-works" className="py-24 relative bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">
-                From Setup to Scale <br />
-                <span className="text-muted-foreground">in Minutes</span>
-              </h2>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+              Autonomous & Collaborative
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Our agents don't just talk; they think, act, and work together to deliver results.
+            </p>
+          </div>
 
-              <div className="space-y-8">
-                {[
-                  { title: "Connect Your Data", desc: "Upload knowledge base, PDFs, or connect CRM via API.", icon: Database },
-                  { title: "Customize & Train", desc: "Define tone, voice, and rules. Our AI learns your business.", icon: Bot },
-                  { title: "Deploy Anywhere", desc: "One-click deploy to phone numbers, WhatsApp, or website.", icon: Zap },
-                  { title: "Scale Automatically", desc: "Handle 10 or 10,000 concurrent conversations seamlessly.", icon: Globe },
-                ].map((step, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="flex flex-col items-center">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold">
-                        {idx + 1}
-                      </div>
-                      {idx !== 3 && <div className="w-px h-full bg-white/5 my-2" />}
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold mb-1 flex items-center gap-2">
-                        {step.title}
-                      </h4>
-                      <p className="text-muted-foreground">{step.desc}</p>
-                    </div>
-                  </div>
-                ))}
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left: Autonomous */}
+            <div className="bg-card border border-white/10 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 relative group overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Bot className="w-32 h-32" />
+              </div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
+                  <Bot className="w-8 h-8 text-blue-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Fully Autonomous</h3>
+                <p className="text-muted-foreground mb-6">
+                  Capable of handling end-to-end workflows without human intervention.
+                </p>
+                <ul className="space-y-4 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
+                    <span><strong>Self-Correction:</strong> Detects misunderstandings and rephrases automatically.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
+                    <span><strong>Task Execution:</strong> Can update CRMs, schedule appointments, and send emails.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
+                    <span><strong>Context Awareness:</strong> Remembers past interactions across channels.</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full opacity-20" />
-              <div className="relative bg-card border border-white/10 rounded-2xl p-8 shadow-2xl">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between border-b border-white/5 pb-4">
-                    <span className="font-mono text-sm text-muted-foreground">training_status</span>
-                    <span className="text-green-400 text-sm font-mono flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      Ready
-                    </span>
-                  </div>
-
-                  <div className="space-y-3 font-mono text-sm">
-                    <div className="flex gap-4 text-muted-foreground">
-                      <span>{">"}</span>
-                      <span>Importing knowledge base...</span>
-                    </div>
-                    <div className="flex gap-4 text-muted-foreground">
-                      <span>{">"}</span>
-                      <span>Analyzing tone parameters...</span>
-                    </div>
-                    <div className="flex gap-4 text-white">
-                      <span className="text-primary">{">"}</span>
-                      <span>Agent configured: "Support_Lead_v2"</span>
-                    </div>
-                    <div className="p-4 rounded bg-white/5 border border-white/10 mt-4">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-xs uppercase text-muted-foreground">Voice Synthesis</span>
-                        <span className="text-xs text-primary">98% Accuracy</span>
-                      </div>
-                      <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-primary w-[98%]" />
-                      </div>
-                    </div>
-                  </div>
+            {/* Right: Collaborative */}
+            <div className="bg-card border border-white/10 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 relative group overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Users className="w-32 h-32" />
+              </div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                  <Users className="w-8 h-8 text-purple-400" />
                 </div>
+                <h3 className="text-2xl font-bold mb-4">Collaborative Swarms</h3>
+                <p className="text-muted-foreground mb-6">
+                  Agents that work together continuously to resolve complex customer needs.
+                </p>
+                <ul className="space-y-4 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-400 mt-0.5 shrink-0" />
+                    <span><strong>Agent Handoffs:</strong> Seamlessly transfer context from Triage to Specialist agents.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-400 mt-0.5 shrink-0" />
+                    <span><strong>Human Escalation:</strong> Smartly brings in humans only when empathy or discretion is needed.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-400 mt-0.5 shrink-0" />
+                    <span><strong>Unified Memory:</strong> All agents and humans share a central knowledge core.</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
