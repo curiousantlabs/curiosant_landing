@@ -401,23 +401,15 @@ export default function Home() {
               </p>
             </div>
 
-            <div>
-              <h4 className="font-bold mb-4">Platform</h4>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                <li><a href="#" className="hover:text-primary">Voice Agents</a></li>
-                <li><a href="#" className="hover:text-primary">Chat Agents</a></li>
-                <li><a href="#" className="hover:text-primary">Integrations</a></li>
-                <li><a href="#" className="hover:text-primary">Security</a></li>
-              </ul>
-            </div>
+
 
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                <li><a href="#" className="hover:text-primary">About Us</a></li>
-                <li><a href="#" className="hover:text-primary">Careers</a></li>
-                <li><a href="#" className="hover:text-primary">Blog</a></li>
-                <li><a href="#" className="hover:text-primary">Contact</a></li>
+                <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
+
+                <li><Link href="/blogs" className="hover:text-primary">Blog</Link></li>
+                <li><Link href="/contact" className="hover:text-primary">Contact</Link></li>
               </ul>
             </div>
           </div>

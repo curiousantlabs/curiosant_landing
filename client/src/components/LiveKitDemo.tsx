@@ -25,12 +25,23 @@ export function LiveKitDemo() {
     const fetchConnectionDetails = async () => {
         try {
             const resp = await fetch("/api/connection-details");
+            if (!resp.ok) {
+                const text = await resp.text();
+                try {
+                    const json = JSON.parse(text);
+                    throw new Error(json.error || `Server error: ${resp.status}`);
+                } catch (e) {
+                    console.error("Fetch failed:", text);
+                    throw new Error(`Connection failed (${resp.status}). Check server logs.`);
+                }
+            }
             const data = await resp.json();
             if (data.error) {
                 throw new Error(data.error);
             }
             setConnectionDetails(data);
         } catch (e: any) {
+            console.error(e);
             setError(e.message || "Could not connect to server");
         }
     };

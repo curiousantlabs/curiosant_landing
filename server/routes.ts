@@ -50,7 +50,13 @@ export async function registerRoutes(
       const wsUrl = process.env.LIVEKIT_URL;
 
       if (!apiKey || !apiSecret || !wsUrl) {
-        return res.status(500).json({ error: "Server misconfigured" });
+        const missing = [];
+        if (!apiKey) missing.push("LIVEKIT_API_KEY");
+        if (!apiSecret) missing.push("LIVEKIT_API_SECRET");
+        if (!wsUrl) missing.push("LIVEKIT_URL");
+
+        console.error("Server misconfigured. Missing environment variables:", missing.join(", "));
+        return res.status(500).json({ error: "Server misconfigured. Check server logs." });
       }
 
       const participantName = "User-" + Math.floor(Math.random() * 10000);

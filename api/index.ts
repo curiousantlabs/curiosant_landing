@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { createServer } from 'http';
 import express, { type Request, Response, type Express } from 'express';
 import { z } from 'zod';
